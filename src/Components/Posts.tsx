@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom";
 
 import { useBlogStore } from "../data/blogpostStore";
+import styles from "../css/Posts.module.css";
 
 export function Posts() {
   const blogs = useBlogStore((state) => state.blogposts);
   const { blogpost } = useParams();
   return (
-    <div>
+    <div className={styles.post}>
       {blogs.map((postData) => {
         const { title, img, headline, paragraph1, paragraph2, paragraph3 } =
           postData;
