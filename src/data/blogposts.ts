@@ -9,6 +9,8 @@ interface BlogStore {
 export const useBlogStore = create<BlogStore>(() => ({
 	blogposts: blogposts,
 	addBlog: (newBlog) => {
-		blogposts.push(newBlog);
+		if (!blogposts.find((obj) => obj.title === newBlog.title)) {
+			blogposts.push(newBlog);
+		}
 	},
 }));
