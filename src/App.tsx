@@ -1,25 +1,19 @@
-import { useBlogStore } from "./data/blogposts";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { BaseLayout } from "./Layout/BaseLayout";
+import { Blogs } from "./Components/Blogs";
+import { Posts } from "./Components/Posts";
 
 export function App() {
-  const blogs = useBlogStore((state) => state.blogposts);
-  // const addBlog = useBlogStore((state) => state.addBlog);
-  // addBlog({
-  //   title: "HELLO MY BLOG",
-  //   img: "test",
-  //   headline: "string",
-  //   paragraph1: "string",
-  //   paragraph2: "string",
-  //   paragraph3: "string",
-  // });
-
-  console.log(blogs);
   return (
-    <>
-      <div>
-        {blogs.map((blog) => (
-          <h1 key={blog.title}>{blog.title}</h1>
-        ))}
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<BaseLayout />}>
+          <Route index element={<h1>TEMP</h1>} />
+          <Route path="Blogs" element={<Blogs />} />
+          <Route path="Blogs/:blogpost" element={<Posts />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
