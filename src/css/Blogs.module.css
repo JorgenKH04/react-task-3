@@ -1,0 +1,39 @@
+.blogs {
+  margin: 4em auto;
+  height: 100%;
+  width: 85%;
+  display: grid;
+  grid-template: repeat(2, 40%) / repeat(3, 1fr);
+  gap: 4em;
+}
+
+.blogs_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.blogs_card img {
+  height: 330px;
+  width: 100%;
+}
+
+.blogs_card h3 {
+  color: #fffde4;
+  padding: 1em;
+  bottom: 69px;
+  position: absolute;
+  width: 75%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.blogs_card a {
+  color: #fffde4;
+  align-self: flex-end;
+  text-decoration: none;
+  font-size: 1.5rem;
+  background-color: #1b1f41;
+  border-radius: 2em;
+  padding: 0.5em 1em;
+}
